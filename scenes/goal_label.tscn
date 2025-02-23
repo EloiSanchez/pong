@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://coehqv28mkt73"]
+
+[ext_resource type="Script" path="res://scenes/goal_label.gd" id="1_q80qg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hro7x"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GoalLabel" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -11.5
+offset_right = 24.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GOAL!"
+label_settings = SubResource("LabelSettings_hro7x")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_q80qg")
+final_size = 100
+phase_in_time = 0.1
+show_time = 1.5
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

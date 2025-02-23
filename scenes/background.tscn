@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4faefksbyv0v"]
+
+[ext_resource type="Texture2D" uid="uid://caqlbmhosldoo" path="res://resources/background/background_noise.tres" id="1_mvccg"]
+[ext_resource type="Script" path="res://scenes/background.gd" id="2_cb6vh"]
+
+[node name="Background" type="Sprite2D"]
+position = Vector2(540, 360)
+scale = Vector2(16.875, 15)
+texture = ExtResource("1_mvccg")
+script = ExtResource("2_cb6vh")

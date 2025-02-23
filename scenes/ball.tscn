@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4oav4e4j3mrb"]
+
+[ext_resource type="Script" path="res://scenes/ball.gd" id="1_0c1nh"]
+
+[sub_resource type="Gradient" id="Gradient_we4xj"]
+colors = PackedColorArray(0.796493, 0.822053, 1, 1, 0.796493, 0.822053, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fcnsi"]
+gradient = SubResource("Gradient_we4xj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75fby"]
+size = Vector2(8, 32)
+
+[node name="Ball" type="Area2D"]
+script = ExtResource("1_0c1nh")
+max_angle = 0.961676
+rand_angle_range = 0.436332
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_fcnsi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_75fby")
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

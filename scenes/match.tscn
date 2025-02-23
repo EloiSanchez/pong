@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://de5djt03e6byq"]
+
+[ext_resource type="Script" path="res://scenes/match.gd" id="1_mt2k7"]
+[ext_resource type="PackedScene" uid="uid://dp8mnaspcd8ps" path="res://scenes/arena.tscn" id="1_nvjjq"]
+[ext_resource type="PackedScene" uid="uid://bom10okwrrl83" path="res://scenes/paddle.tscn" id="2_nsfsu"]
+[ext_resource type="PackedScene" uid="uid://dvsc027krq0cu" path="res://scenes/HUD.tscn" id="4_cs43f"]
+
+[node name="Match" type="Node2D"]
+script = ExtResource("1_mt2k7")
+
+[node name="Arena" parent="." instance=ExtResource("1_nvjjq")]
+
+[node name="Paddle" parent="." instance=ExtResource("2_nsfsu")]
+position = Vector2(30, 360)
+color = Color(0.479829, 0.69426, 0.753401, 1)
+
+[node name="Paddle2" parent="." instance=ExtResource("2_nsfsu")]
+position = Vector2(1050, 360)
+rotation = 3.14159
+color = Color(0.87279, 0.524485, 0.488191, 1)
+player_id = 2
+
+[node name="HUD" parent="." instance=ExtResource("4_cs43f")]

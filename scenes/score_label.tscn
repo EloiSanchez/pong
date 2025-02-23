@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://l4jugovpu48p"]
+
+[ext_resource type="Script" path="res://scenes/label.gd" id="1_34cpt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrh1c"]
+
+[node name="ScoreLabel" type="Label"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 97.0
+offset_bottom = 39.0
+text = "Player 1: X"
+label_settings = SubResource("LabelSettings_mrh1c")
+script = ExtResource("1_34cpt")
+player_id = 1

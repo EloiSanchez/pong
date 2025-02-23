@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0prrlxbi5kgl"]
+
+[ext_resource type="Script" path="res://scenes/border.gd" id="1_n5yjh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xcclj"]
+normal = Vector2(0, 1)
+distance = 8.0
+
+[node name="Border" type="Area2D"]
+script = ExtResource("1_n5yjh")
+color_1 = Color(0.737182, 0.0786744, 0.753503, 1)
+color_2 = Color(0.290366, 0.749764, 0.155432, 1)
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_xcclj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
