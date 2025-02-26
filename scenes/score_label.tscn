@@ -12,4 +12,3 @@ offset_bottom = 39.0
 text = "Player 1: X"
 label_settings = SubResource("LabelSettings_mrh1c")
 script = ExtResource("1_34cpt")
-player_id = 1

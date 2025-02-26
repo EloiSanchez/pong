@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8xqad55nbqgt"]
+
+[ext_resource type="PackedScene" uid="uid://diopk6k40ufy0" path="res://scenes/colored_button.tscn" id="1_elqdf"]
+
+[node name="PlayerSelection" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -772.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="ColoredButton2" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+color = Color(0.842756, 0.14399, 0.213248, 1)
+
+[node name="ColoredButton3" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+color = Color(0.694694, 0.368263, 0.0485811, 1)
+
+[node name="ColoredButton4" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+color = Color(0.802168, 0.0632307, 0.590185, 1)
+
+[node name="ColoredButton" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+
+[node name="ColoredButton5" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+color = Color(0, 0.568454, 0.00168708, 1)
+
+[node name="ColoredButton6" parent="." instance=ExtResource("1_elqdf")]
+layout_mode = 2
+color = Color(0.680369, 0.00264238, 0.916874, 1)

@@ -5,7 +5,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8dykc"]
 normal = Vector2(1, 0)
 
-[node name="GoalArea" type="Area2D"]
+[node name="GoalArea" type="Area2D" groups=["goal_areas"]]
 script = ExtResource("1_xk740")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

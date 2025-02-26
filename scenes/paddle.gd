@@ -13,6 +13,7 @@ var speed: int = 0
 var size: int
 var input_movement
 var screen_size: Vector2
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +37,9 @@ func _physics_process(delta: float) -> void:
 	
 	position.y = max(size / 2, position.y)
 	position.y = min(screen_size.y - size / 2, position.y)
-	
+
+func increase_score():
+	score += 1
 
 func _on_area_entered(ball: Ball) -> void:
 	ball._on_paddle_collision()

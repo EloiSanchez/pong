@@ -11,7 +11,7 @@ movement_speed = 700
 radius = 5.0
 height = 135.0
 
-[node name="Paddle" type="Area2D"]
+[node name="Paddle" type="Area2D" groups=["players"]]
 script = ExtResource("1_x8uh0")
 color = Color(1, 1, 1, 1)
 movement_stats = SubResource("Resource_gph1u")

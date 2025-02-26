@@ -2,6 +2,8 @@ extends Label
 
 class_name GoalLabel
 
+signal finished_goal
+
 @onready var timer: Timer = $Timer
 
 @export var start_size: int = 60
@@ -27,19 +29,19 @@ func _process(delta: float) -> void:
 	var effective_t: float
 	
 	if t < phase_in_time:
-		label_settings.font_size = start_size * t / phase_in_time
+		add_theme_font_size_override("font_size", start_size * t / phase_in_time)
 	elif phase_in_time <= t and t <= phase_in_time + show_time:
 		effective_t = (t - phase_in_time) / show_time
-		label_settings.font_size = start_size + effective_t * (final_size - start_size)
+		add_theme_font_size_override("font_size", start_size + effective_t * (final_size - start_size))
 	elif phase_in_time + show_time < t:
 		effective_t = (t - phase_in_time - show_time) / phase_out_time
-		label_settings.font_size = (1 - effective_t) * final_size
+		add_theme_font_size_override("font_size", (1 - effective_t) * final_size)
 
-func show_goal_label(_player_id: int):
+func show_goal_label():
 	t = 0
 	timer.start()
 	show()
 
 func _on_timer_timeout() -> void:
-	SignalBus.finished_goal.emit(player_id)
+	finished_goal.emit()
 	hide()

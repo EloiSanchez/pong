@@ -1,13 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvsc027krq0cu"]
+[gd_scene load_steps=5 format=3 uid="uid://dvsc027krq0cu"]
 
-[ext_resource type="Script" path="res://scenes/hud.gd" id="1_faeqk"]
 [ext_resource type="PackedScene" uid="uid://l4jugovpu48p" path="res://scenes/score_label.tscn" id="2_y1csn"]
 [ext_resource type="PackedScene" uid="uid://coehqv28mkt73" path="res://scenes/goal_label.tscn" id="3_vbcgk"]
 
+[sub_resource type="SystemFont" id="SystemFont_0147n"]
+font_names = PackedStringArray("JetBrainsMonoNL Nerd Font")
+font_weight = 550
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_f3xry"]
+font_names = PackedStringArray("Bitstream Vera Sans")
+font_weight = 999
+subpixel_positioning = 0
+
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_faeqk")
 
 [node name="Player1Score" parent="." instance=ExtResource("2_y1csn")]
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = SubResource("SystemFont_0147n")
+theme_override_font_sizes/font_size = 32
+label_settings = null
+player_id = 1
 
 [node name="Player2Score" parent="." instance=ExtResource("2_y1csn")]
 anchors_preset = 1
@@ -16,7 +30,18 @@ anchor_right = 1.0
 offset_left = -96.0
 offset_right = -15.0
 grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = SubResource("SystemFont_0147n")
+theme_override_font_sizes/font_size = 32
 text = "Player 2: X"
+label_settings = null
 player_id = 2
 
 [node name="GoalLabel" parent="." instance=ExtResource("3_vbcgk")]
+visible = false
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_f3xry")
+theme_override_font_sizes/font_size = 0
+label_settings = null
