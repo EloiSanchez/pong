@@ -18,8 +18,6 @@ var t: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.goal_scored_by.connect(show_goal_label)
-	
 	timer.wait_time = phase_in_time + show_time + phase_out_time
 	hide()
 	

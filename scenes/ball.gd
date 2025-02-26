@@ -40,13 +40,11 @@ func get_new_velocity() -> Vector2:
 		velocity.length() * cos(new_angle), 
 		velocity.length() * sin(new_angle)
 		)
-	print("New angle %s. New speed %s" % [rad_to_deg(new_angle), vec.length()])
 		
 	return vec
 
 func get_new_angle() -> float:
 	var rand_angle = randf_range(-rand_angle_range, rand_angle_range)
-	print("Current angle %s. Random angle added %s." % [rad_to_deg(velocity.angle()), rad_to_deg(rand_angle)])
 	return cap_angle(velocity.angle() + rand_angle)
 
 func cap_angle(new_angle: float) -> float:

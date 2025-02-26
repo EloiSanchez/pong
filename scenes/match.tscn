@@ -19,5 +19,6 @@ position = Vector2(1050, 360)
 rotation = 3.14159
 color = Color(0.87279, 0.524485, 0.488191, 1)
 player_id = 2
+player_type = "Bot"
 
 [node name="HUD" parent="." instance=ExtResource("4_cs43f")]

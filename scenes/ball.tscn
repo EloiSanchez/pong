@@ -11,7 +11,7 @@ gradient = SubResource("Gradient_we4xj")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75fby"]
 size = Vector2(8, 32)
 
-[node name="Ball" type="Area2D"]
+[node name="Ball" type="Area2D" groups=["ball"]]
 script = ExtResource("1_0c1nh")
 max_angle = 0.961676
 rand_angle_range = 0.436332

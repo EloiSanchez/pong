@@ -5,11 +5,20 @@
 [sub_resource type="GDScript" id="GDScript_eo7gm"]
 script/source = "extends Control
 
-func change_scene_to_match():
-	get_tree().change_scene_to_file(\"res://scenes/match.tscn\")
+func change_scene_to_match(mode: String):
+	var match_scene = load(\"res://scenes/match.tscn\").instantiate()
+	match_scene.mode = mode
+	get_tree().root.add_child(match_scene)
+	get_tree().root.remove_child(self)
+
+
 
 func _on_two_player_button_button_up() -> void:
-	change_scene_to_match()
+	change_scene_to_match(\"two_players\")
+
+
+func _on_single_player_button_button_up() -> void:
+	change_scene_to_match(\"single_player\")
 "
 
 [sub_resource type="SystemFont" id="SystemFont_rr8n7"]
@@ -143,4 +152,5 @@ theme_override_fonts/font = SubResource("SystemFont_mghlp")
 theme_override_font_sizes/font_size = 42
 text = "Two Players"
 
+[connection signal="button_up" from="MarginContainer/HSplitContainer/SinglePlayerButton" to="." method="_on_single_player_button_button_up"]
 [connection signal="button_up" from="MarginContainer/HSplitContainer/TwoPlayerButton" to="." method="_on_two_player_button_button_up"]
